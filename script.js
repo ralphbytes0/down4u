@@ -1,18 +1,27 @@
-window.addEventListener('load', () => {
-  const flower = document.getElementById('flower');
-  const overlay = document.getElementById('overlay');
-  const dashboard = document.getElementById('dashboard');
+const player = document.getElementById('audio-player');
+const records = document.querySelectorAll('.vinyl');
 
-  // Bloom animation
-  setTimeout(() => {
-    flower.style.opacity = '1';
-    flower.style.transform = 'scale(1)';
-  }, 500);
+records.forEach(record => {
+  record.addEventListener('click', () => {
+    const src = record.getAttribute('data-src');
+    
+    // If clicking the currently playing record, pause it
+    if (player.src.includes(src) && !player.paused) {
+      player.pause();
+      record.classList.remove('playing');
+      return;
+    }
+    
+    // Pause any other record
+    records.forEach(r => r.classList.remove('playing'));
+    
+    // Load and play the clicked track
+    player.src = src;
+    player.play();
+    record.classList.add('playing');
+  });
+});
 
-  // Fade down and reveal dashboard
-  setTimeout(() => {
-    overlay.style.transform = 'translateY(100%)';
-    overlay.style.opacity = '0';
-    dashboard.style.display = 'block';
-  }, 3000);
+player.addEventListener('ended', () => {
+  records.forEach(r => r.classList.remove('playing'));
 });
