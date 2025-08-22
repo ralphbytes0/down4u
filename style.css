@@ -1,38 +1,46 @@
-
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow: hidden;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #fdf6f0;
+#music-stop {
+  text-align: center;
+  background: #F1FAEE;
+  padding: 2rem 0;
 }
 
-#overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('paper.jpg') center/cover no-repeat;
+.vinyl-container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  z-index: 10;
-  transition: transform 2s ease-in-out, opacity 2s ease-in-out;
+  gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
-#flower {
+.vinyl {
   width: 150px;
-  opacity: 0;
-  transform: scale(0.5);
-  transition: all 2s ease-in-out;
+  height: 150px;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-#dashboard {
-  position: relative;
-  z-index: 1;
-  padding: 2rem;
-  text-align: center;
-  display: none;
+.vinyl img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.vinyl .label {
+  position: absolute;
+  bottom: -1.5rem;
+  width: 100%;
+  font-size: 0.8rem;
+  line-height: 1.1;
+  color: #457B9D;
+}
+
+.vinyl.playing {
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
