@@ -1,0 +1,32 @@
+<div id="vault-locked">
+  <input type="password" id="vault-pass" placeholder="Enter password" />
+  <button id="unlock">Unlock</button>
+</div>
+
+<div id="vault-content" style="display:none;">
+  <h2>Your Letters</h2>
+  <textarea id="letter"></textarea>
+  <button id="save">Save</button>
+  <ul id="letters"></ul>
+</div>
+
+<script>
+document.getElementById('unlock').onclick = () => {
+  if (document.getElementById('vault-pass').value === 'ipadkid') {
+    document.getElementById('vault-locked').style.display = 'none';
+    document.getElementById('vault-content').style.display = 'block';
+  } else {
+    alert('Incorrect password');
+  }
+};
+
+document.getElementById('save').onclick = () => {
+  const text = document.getElementById('letter').value;
+  if (text.trim()) {
+    const li = document.createElement('li');
+    li.textContent = text;
+    document.getElementById('letters').appendChild(li);
+    document.getElementById('letter').value = '';
+  }
+};
+</script>
