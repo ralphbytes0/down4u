@@ -1,0 +1,22 @@
+<div id="disk" draggable="true">💿 Song 1</div>
+<div id="player-zone">🎵 Drop Here</div>
+<audio id="audio" controls></audio>
+
+<script>
+const disk = document.getElementById('disk');
+const zone = document.getElementById('player-zone');
+const audio = document.getElementById('audio');
+
+disk.addEventListener('dragstart', e => {
+  e.dataTransfer.setData('text/plain', 'audio/paksa.mp3');
+});
+
+zone.addEventListener('dragover', e => e.preventDefault());
+
+zone.addEventListener('drop', e => {
+  e.preventDefault();
+  const src = e.dataTransfer.getData('text/plain');
+  audio.src = src;
+  audio.play();
+});
+</script>
