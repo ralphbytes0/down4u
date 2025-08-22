@@ -1,49 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Poetic Dashboard</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <main id="dashboard">
-    <div class="scroll-container">
-      <section class="box" id="envelope">
-        <h2>Envelope</h2>
-        <button id="reveal-poem">Reveal Poem</button>
-        <pre id="poem-display">...</pre>
-      </section>
+<section class="box" id="envelope">
+  <h2>Envelope</h2>
+  <button onclick="location.href='envelope.html'">Reveal Poem</button>
+</section>
 
-      <section class="box" id="flower-wall">
-        <h2>Flower Wall</h2>
-        <button id="bloom">Bloom Message</button>
-        <div id="flowers"></div>
-      </section>
+<section class="box" id="flower-wall">
+  <h2>Flower Wall</h2>
+  <button onclick="location.href='flower-wall.html'">Bloom Message</button>
+</section>
 
-      <section class="box" id="letter-vault">
-        <h2>Letter Vault</h2>
-        <textarea id="letter-input" placeholder="Write your letter..."></textarea>
-        <button id="save-letter">Save</button>
-        <ul id="vault-list"></ul>
-      </section>
+<section class="box" id="letter-vault">
+  <h2>Letter Vault</h2>
+  <button onclick="location.href='letter-vault.html'">Go to Vault</button>
+</section>
 
-      <section class="box" id="mirror-space">
-        <h2>Mirror Space</h2>
-        <input type="text" id="mirror-input" placeholder="Type a thought..." />
-        <button id="reflect">Reflect</button>
-        <p id="reflection"></p>
-      </section>
+<section class="box" id="mirror-space">
+  <h2>Mirror Space</h2>
+  <button onclick="location.href='mirror.html'">Reflect</button>
+</section>
 
-      <section class="box" id="vinyl-player">
-        <h2>Vinyl Player</h2>
-        <button class="vinyl" data-src="audio/paksa.mp3">Paksa — chrstn</button>
-        <button class="vinyl" data-src="audio/softspace.mp3">Soft Space — Huey</button>
-        <audio id="player" controls></audio>
-      </section>
-    </div>
-  </main>
-
-  <script src="script.js"></script>
-</body>
-</html>
+<section class="box" id="vinyl-player">
+  <h2>Vinyl Player</h2>
+  <button onclick="location.href='vinyl.html'">Play</button>
+</section>
