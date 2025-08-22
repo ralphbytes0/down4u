@@ -1,21 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>down4u</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div id="overlay">
-    <img src="flower.png" alt="Dried Flower" id="flower" />
+<section id="music-stop">
+  <h2>Turn the Key</h2>
+  <div class="vinyl-container">
+    <!-- Repeat this block for each song -->
+    <div class="vinyl" data-src="assets/audio/song1.mp3">
+      <img src="assets/images/cover1.jpg" alt="Cover art for Song 1">
+      <div class="label">Song 1 Title<br><small>Artist Name</small></div>
+    </div>
+    <!-- … -->
   </div>
-
-  <div id="dashboard">
-    <h1>Welcome to down4u</h1>
-    <p>This is your sweet dashboard ✨</p>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+  <audio id="audio-player"></audio>
+</section>
