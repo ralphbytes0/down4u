@@ -1,21 +1,49 @@
-<div class="envelope">
-  <div class="flap">
-    <img src="rose-watermark.png" alt="Rose watermark" />
-  </div>
-  <div class="content">
-    <p>Her kindness bloomed quietly, like petals unfolding in silence.</p>
-  </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poetic Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="dashboard">
+    <div class="scroll-container">
+      <section class="box" id="envelope">
+        <h2>Envelope</h2>
+        <button id="reveal-poem">Reveal Poem</button>
+        <pre id="poem-display">...</pre>
+      </section>
 
-<div class="rose-loader">
-  <img src="rose-icon.png" alt="Rose" />
-</div>
+      <section class="box" id="flower-wall">
+        <h2>Flower Wall</h2>
+        <button id="bloom">Bloom Message</button>
+        <div id="flowers"></div>
+      </section>
 
-<div class="section-divider">
-  <img src="vine-divider.png" alt="Rose & Chrysanthemum vine" />
-</div>
+      <section class="box" id="letter-vault">
+        <h2>Letter Vault</h2>
+        <textarea id="letter-input" placeholder="Write your letter..."></textarea>
+        <button id="save-letter">Save</button>
+        <ul id="vault-list"></ul>
+      </section>
 
-<div class="poem-card">
-  <div class="flower-frame rose"></div>
-  <p>Your kindness is the quiet bloom I never saw coming.</p>
-</div>
+      <section class="box" id="mirror-space">
+        <h2>Mirror Space</h2>
+        <input type="text" id="mirror-input" placeholder="Type a thought..." />
+        <button id="reflect">Reflect</button>
+        <p id="reflection"></p>
+      </section>
+
+      <section class="box" id="vinyl-player">
+        <h2>Vinyl Player</h2>
+        <button class="vinyl" data-src="audio/paksa.mp3">Paksa — chrstn</button>
+        <button class="vinyl" data-src="audio/softspace.mp3">Soft Space — Huey</button>
+        <audio id="player" controls></audio>
+      </section>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
