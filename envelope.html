@@ -1,0 +1,25 @@
+<div id="envelopes"></div>
+
+<div id="poem-modal" style="display:none;">
+  <div id="poem-text"></div>
+  <button onclick="closeModal()">Close</button>
+</div>
+
+<script src="poems.js"></script>
+<script>
+const container = document.getElementById('envelopes');
+poems.forEach((poem, i) => {
+  const btn = document.createElement('button');
+  btn.textContent = `Envelope ${i+1}`;
+  btn.onclick = () => showPoem(poem);
+  container.appendChild(btn);
+});
+
+function showPoem(text) {
+  document.getElementById('poem-text').textContent = text;
+  document.getElementById('poem-modal').style.display = 'block';
+}
+function closeModal() {
+  document.getElementById('poem-modal').style.display = 'none';
+}
+</script>
