@@ -1,0 +1,21 @@
+<div id="flower-wall"></div>
+<button id="bloom">Bloom Message</button>
+<button id="continue" style="display:none;">Continue</button>
+
+<script src="flowers.js"></script>
+<script>
+document.getElementById('bloom').onclick = () => {
+  const flower = document.createElement('div');
+  flower.textContent = "🌸";
+  document.getElementById('flower-wall').appendChild(flower);
+  document.getElementById('continue').style.display = 'inline-block';
+};
+
+document.getElementById('continue').onclick = () => {
+  flowers.forEach(msg => {
+    const p = document.createElement('p');
+    p.textContent = msg;
+    document.getElementById('flower-wall').appendChild(p);
+  });
+};
+</script>
