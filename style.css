@@ -1,46 +1,126 @@
-#music-stop {
-  text-align: center;
-  background: #F1FAEE;
-  padding: 2rem 0;
+:root {
+  --bg-color: #F8F9FA;           /* Soft white */
+  --text-color: #2C2C2C;         /* Charcoal black */
+  --rose-blush: #E6B7C1;         /* Accent */
+  --chrysanthemum-gold: #D4AF37; /* Envelope border */
+  --font-serif: 'Lora', serif;
+  --font-sans: 'Inter', sans-serif;
 }
 
-.vinyl-container {
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-serif);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--rose-blush);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--chrysanthemum-gold);
+  text-decoration: underline;
+}
+
+
+.envelope {
+  border: 2px solid var(--chrysanthemum-gold);
+  border-radius: 12px;
+  padding: 1.5rem;
+  background-color: #fff;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.envelope:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.flap img {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 50px;
+  opacity: 0.1;
+  transition: opacity 0.5s ease;
+}
+
+.envelope:hover .flap img {
+  opacity: 0.4;
+}
+
+
+.rose-loader {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--bg-color);
 }
 
-.vinyl {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
+.rose-loader img {
+  width: 100px;
+  opacity: 0;
+  animation: bloom 3s ease-in-out forwards;
+}
+
+@keyframes bloom {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+.section-divider {
+  margin: 3rem 0;
+  text-align: center;
+}
+
+.section-divider img {
+  width: 80%;
+  max-width: 600px;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.section-divider img:hover {
+  opacity: 0.5;
+}
+
+
+.poem-card {
   position: relative;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+  padding: 1.5rem;
+  background: #FFFFFF;
+  border: 1px solid var(--chrysanthemum-gold);
+  border-radius: 10px;
+  font-family: var(--font-serif);
+  color: var(--text-color);
+  margin: 2rem auto;
+  max-width: 600px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-.vinyl img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.vinyl .label {
+.flower-frame.rose {
   position: absolute;
-  bottom: -1.5rem;
-  width: 100%;
-  font-size: 0.8rem;
-  line-height: 1.1;
-  color: #457B9D;
-}
-
-.vinyl.playing {
-  animation: spin 4s linear infinite;
-}
-
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+  top: -15px;
+  right: -15px;
+  width: 50px;
+  height: 50px;
+  background: url('rose-icon.png') no-repeat center/contain;
+  opacity: 0.2;
 }
