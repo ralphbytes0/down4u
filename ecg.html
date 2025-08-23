@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Loading…</title>
+  <style>
+    /* Reset & layout */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #111;
+      font-family: sans-serif;
+      color: #fff;
+      flex-direction: column;
+    }
+
+    /* ECG (heart rate) SVG styling */
+    svg.ecg {
+      width: 300px;
+      height: 100px;
+      overflow: visible;
+    }
+
+    svg.ecg path {
+      stroke: #e74c3c;
+      stroke-width: 3;
+      fill: none;
+      stroke-dasharray: 350;       /* total path length */
+      stroke-dashoffset: 350;      /* hide the stroke */
+      animation: draw 2s ease-in-out infinite;
+    }
+
+    @keyframes draw {
+      0%, 80% {
+        stroke-dashoffset: 350;
+      }
+      90%, 100% {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    /* Loading text */
+    .loading-text {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+      opacity: 0.7;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.7; }
+      50% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <!-- ECG path: tweak the coordinates for different pulse patterns -->
+  <svg class="ecg" viewBox="0 0 300 100">
+    <path d="M0,50 L60,50 L70,20 L90,80 L110,50 L300,50" />
+  </svg>
+
+  <div class="loading-text">Loading...</div>
+</body>
+</html>
+
